@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+}
+
+/* Menu icon at the top left */
+.menu-icon {
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1; /* Ensure it stays above the sidebar */
+}
+
+/* Sidebar (navigation menu) */
+.sidebar {
+  position: fixed;
+  left: -200px; /* Initially hidden off-screen */
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+  transition: left 0.3s ease, top 0.3s ease;
+  overflow-x: hidden;
+  z-index: 0; /* Sidebar stays under the menu icon */
+}
+
+/* Sidebar menu links */
+.sidebar ul {
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #444;
+}
+
+/* Show sidebar on hover for desktop screens */
+.container:hover .sidebar {
+  left: 0;
+}
+
+/* Mobile behavior: Sidebar slides down from the top */
+@media screen and (max-width: 768px) {
+  /* Adjust the sidebar for mobile screens */
+  .sidebar {
+    left: 0;
+    top: -100%;
+    width: 100%; /* Full width on mobile */
+    height: 100%; /* Full height on mobile */
+  }
+
+  /* When the menu button is clicked, move the sidebar from top */
+  .sidebar.open {
+    top: 0;
+  }
+}
