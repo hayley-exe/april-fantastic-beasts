@@ -6,6 +6,9 @@
 
 body {
   font-family: Arial, sans-serif;
+  background-image: url(imgs/parchment-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -22,10 +25,10 @@ body {
   background-color: #333;
   color: white;
   border-radius: 5px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1; /* Ensure it stays above the sidebar */
+  position: fixed; /* Fixed positioning */
+  top: 0; /* Align to the top of the viewport */
+  left: 0; /* Align to the left of the viewport */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 /* Sidebar (navigation menu) */
@@ -81,4 +84,40 @@ body {
   .sidebar.open {
     top: 0;
   }
+}
+
+/* Container to hold both divs with space between them */
+.container {
+  display: flex;
+  justify-content: space-between; /* Space between the divs */
+  width: 80%; /* Set container width to 80% of the page */
+  height: 70%; /* Set container height to 70% of the page */
+  margin-top: 100px; /* Push the container down from the top */
+}
+
+/* Left div with text */
+.left-div {
+  width: 45%; /* 45% of the width of the container */
+  padding: 20px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  border-radius: 10px;
+}
+
+/* Right div with image */
+.right-div {
+  width: 45%; /* 45% of the width of the container */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.right-div img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
