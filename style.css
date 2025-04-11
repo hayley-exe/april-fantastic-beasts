@@ -1,3 +1,4 @@
+/* Reset all margins, padding, and box-sizing */
 * {
   margin: 0;
   padding: 0;
@@ -5,19 +6,15 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-image: url(imgs/parchment-bg.jpg);
+  background-image: url("imgs/parchment-bg.jpg"); /* Add your background image */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; /* Ensure the background image covers the whole page */
+  background-attachment: fixed; /* Keep the background image fixed when scrolling */
+  height: 100vh; /* Ensure the body takes up the full viewport height */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
-
-.container {
-  display: flex;
-  height: 100vh;
-  position: relative;
-}
-
-/* Menu icon at the top left */
+/* Top menu icon */
 .menu-icon {
   font-size: 30px;
   padding: 10px;
@@ -25,13 +22,13 @@ body {
   background-color: #333;
   color: white;
   border-radius: 5px;
-  position: fixed; /* Fixed positioning */
-  top: 0; /* Align to the top of the viewport */
-  left: 0; /* Align to the left of the viewport */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
 }
 
-/* Sidebar (navigation menu) */
+/* Sidebar */
 .sidebar {
   position: fixed;
   left: -200px; /* Initially hidden off-screen */
@@ -39,14 +36,17 @@ body {
   width: 200px;
   height: 100%;
   background-color: #333;
-  transition: left 0.3s ease, top 0.3s ease;
-  overflow-x: hidden;
-  z-index: 0; /* Sidebar stays under the menu icon */
+  transition: left 0.5s ease-in-out; /* Smooth transition */
+  z-index: 500;
 }
 
-/* Sidebar menu links */
+/* Sidebar visible when 'open' class is applied */
+.sidebar.open {
+  left: 0; /* Sidebar slides in */
+}
+
 .sidebar ul {
-  list-style-type: none;
+  list-style: none;
   padding: 20px 0;
 }
 
@@ -65,59 +65,62 @@ body {
   background-color: #444;
 }
 
-/* Show sidebar on hover for desktop screens */
-.container:hover .sidebar {
-  left: 0;
-}
-
-/* Mobile behavior: Sidebar slides down from the top */
-@media screen and (max-width: 768px) {
-  /* Adjust the sidebar for mobile screens */
-  .sidebar {
-    left: 0;
-    top: -100%;
-    width: 100%; /* Full width on mobile */
-    height: 100%; /* Full height on mobile */
-  }
-
-  /* When the menu button is clicked, move the sidebar from top */
-  .sidebar.open {
-    top: 0;
-  }
-}
-
-/* Container to hold both divs with space between them */
-.container {
-  display: flex;
-  justify-content: space-between; /* Space between the divs */
-  width: 80%; /* Set container width to 80% of the page */
-  height: 70%; /* Set container height to 70% of the page */
-  margin-top: 100px; /* Push the container down from the top */
-}
-
-/* Left div with text */
-.left-div {
-  width: 45%; /* 45% of the width of the container */
-  padding: 20px;
+/* Title styling */
+.title {
   text-align: center;
-  background-color: #333;
-  color: white;
-  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-/* Right div with image */
-.right-div {
-  width: 45%; /* 45% of the width of the container */
+/* Main wrapper */
+.main-container {
+  max-width: 1000px;
+  margin: 100px auto 0 auto;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ccc;
-  border-radius: 10px;
 }
 
+/* Flex layout for the content row */
+.content-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* Left and right column styles */
+.left-div,
+.right-div {
+  flex: 1;
+  padding: 10px;
+  background-color: #265674;
+  color: #f3f3e7;
+}
+
+/* Image styling */
 .right-div img {
   max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  /* Stack the content vertically on mobile */
+  .main-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar takes full width on mobile */
+  .sidebar {
+    left: -100%; /* Initially hidden off-screen on mobile */
+    width: 100%; /* Full width for mobile */
+  }
+
+  .sidebar.open {
+    left: 0; /* Visible when 'open' class is added */
+  }
+
+  /* Stack left and right divs vertically on small screens */
+  .content-row {
+    flex-direction: column;
+  }
 }
