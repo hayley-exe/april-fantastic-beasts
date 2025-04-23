@@ -132,7 +132,6 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin-top: 50px; /* Adding some top margin */
-  background-color: #265674;
 }
 
 /* Each row for the divs should be centered */
@@ -180,4 +179,76 @@ body {
 .divider {
   margin-bottom: 40px; /* Space between each div to create a "break" */
   background-color: transparent; /* Ensure no background color for the divider */
+}
+
+.one {
+  background-color: #ad1417;
+}
+
+.two {
+  background-color: #ffd7a9;
+}
+
+.tree {
+  background-color: #daa53f;
+}
+
+.four {
+  background-color: rgb(38, 211, 32);
+}
+
+/* Div One: Split text and image evenly */
+.one .text-content,
+.one .image-content {
+  width: 50%;
+}
+
+/* Style the image in Div One */
+.one .custom-img {
+  width: 100%; /* Take full width of the 50% container */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.two .text-content,
+.two .image-content {
+  width: 50%;
+}
+
+.two .custom-img {
+  width: 100%; /* Take full width of the 50% container */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.tree .text-content,
+.tree .image-content {
+  width: 50%;
+}
+
+.tree .custom-img {
+  width: 100%; /* Take full width of the 50% container */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.four .text-content,
+.four .image-content {
+  width: 50%;
+}
+
+.four .custom-img {
+  width: 100%; /* Take full width of the 50% container */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Center main container */
+.container {
+  margin: 0 auto;
+  max-width: 900px;
 }
