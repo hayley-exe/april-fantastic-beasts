@@ -92,8 +92,8 @@ body {
 .right-div {
   flex: 1;
   padding: 10px;
-  background-color: #265674;
-  color: #f3f3e7;
+  background-color: #949494;
+  color: #ffffff;
 }
 
 /* Image styling */
@@ -182,11 +182,11 @@ body {
 }
 
 .one {
-  background-color: #ad1417;
+  background-color: #d81114;
 }
 
 .two {
-  background-color: #ffd7a9;
+  background-color: #ffae7f;
 }
 
 .tree {
@@ -194,7 +194,7 @@ body {
 }
 
 .four {
-  background-color: rgb(38, 211, 32);
+  background-color: rgb(64, 255, 57);
 }
 
 /* Div One: Split text and image evenly */
