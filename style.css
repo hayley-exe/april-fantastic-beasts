@@ -6,13 +6,16 @@
 }
 
 body {
-  background-image: url("imgs/parchment-bg.jpg"); /* Add your background image */
+  background-image: url("imgs/bway-bg.jpg"); /* Add your background image */
   background-repeat: no-repeat;
   background-size: cover; /* Ensure the background image covers the whole page */
   background-attachment: fixed; /* Keep the background image fixed when scrolling */
   height: 100vh; /* Ensure the body takes up the full viewport height */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
+  font-family: "Broadway", sans-serif;
+  font-size: larger;
+  color: white;
 }
 
 /* Top menu icon */
@@ -70,6 +73,7 @@ body {
 .title {
   text-align: center;
   margin-bottom: 20px;
+  font-size: xx-large;
 }
 
 /* Main wrapper */
@@ -194,7 +198,7 @@ body {
 }
 
 .four {
-  background-color: rgb(64, 255, 57);
+  background-color: rgb(115, 219, 112);
 }
 
 /* Div One: Split text and image evenly */
